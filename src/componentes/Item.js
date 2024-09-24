@@ -7,11 +7,24 @@
 // MÉTODOS: Item no requiere de métodos.
 // PROPS: Item recibe como props el método para modificar la plataforma favorita y su respectivo nombre como contenido.
 
-export default function Item(props) {
-    return (
-      <>
-          // 🚩
-      </>
-    );
-  }
-  
+export default function Item({ plataforma, setFavorita }) {
+  return (
+    <li>
+      <button
+        onClick={() => setFavorita(plataforma)}
+        style={{ backgroundColor: "#90EE90",
+          color: "black",
+          border: "none",
+          borderRadius: "10px",
+          padding: "0",
+          cursor: "pointer",
+          margin: "0",
+          width: "100%",
+          outline: "none",
+        }}  
+      >
+        {plataforma}
+      </button>
+    </li>
+  );
+}

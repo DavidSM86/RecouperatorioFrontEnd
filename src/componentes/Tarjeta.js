@@ -1,3 +1,4 @@
+import Item from "./Item";
 const listadoPlataformas = ["Twitter", "Facebook", "Youtube"];
 
 // CONSIGNAS EN TARJETA:
@@ -13,8 +14,14 @@ const listadoPlataformas = ["Twitter", "Facebook", "Youtube"];
 
 export default function Tarjeta(props) {
   return (
-    <ul>
-      {/* 🚩 Implementar acá */}
+    <ul style={{ backgroundColor: 'lightgrey', borderRadius: '10px', padding: '20px' }}>
+      {listadoPlataformas.map((plataforma) => (
+        <Item
+          key={plataforma}
+          plataforma={plataforma}
+          setFavorita={props.setFavorita}
+        />
+      ))}
     </ul>
   );
 }
